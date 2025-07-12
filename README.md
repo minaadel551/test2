@@ -42,7 +42,7 @@ Key Features:
 
 1. Open the internet browser on your PS4 with firmware 9.00.
 
-2. Go to the host [website](https://minaadel551.github.io/ps4host/).
+2. Go to the host [website](https://minaadel551.github.io/test2/).
 
 3. The page will be automatically cached in the browser.
 
