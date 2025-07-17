@@ -1,0 +1,133 @@
+<html manifest="psfree_lapse.cache">
+<head>
+<title>MINA ADEL - Caching Host</title>
+<link rel="shortcut icon" href="favicon.ico"></link>
+<style>
+    body {
+        background-color: #000000;
+        color: white;
+        text-align: center;
+        margin: 0;
+        overflow: hidden;
+        font-family: system-ui;
+    }
+
+    .background-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15vw;
+        font-weight: bold;
+        color: rgba(139, 0, 0, 0.9);
+        z-index: -1;
+        user-select: none;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* --- بداية الكود الجديد للصورتين --- */
+    .corner-image {
+        position: fixed;
+        width: 250px;
+        opacity: 0.7;
+        z-index: 0;
+    }
+
+    .top-right {
+        top: 20px;
+        right: 20px;
+    }
+
+    .bottom-left {
+        bottom: 20px;
+        left: 20px;
+    }
+    /* --- نهاية الكود الجديد للصورتين --- */
+
+    .info-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    .progress-title {
+        font-size: 40px;
+        text-shadow: 2px 2px #000;
+    }
+
+    #myProgress {
+        border: 2px solid #888;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 60%;
+        margin: 20px auto;
+        box-shadow: 0px 0px 25px rgba(139, 0, 0, 0.7);
+    }
+
+    #myBar {
+        width: 0%;
+        height: 40px;
+        background: linear-gradient(to right, #006400, #004d00);
+        text-align: center;
+        line-height: 40px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 1px 1px #000;
+        border-radius: 8px;
+    }
+
+    .footer-bar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #cccccc;
+        padding: 10px 0;
+        font-size: 16px;
+        border-top: 1px solid #222222;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px; 
+    }
+
+    .footer-bar a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+</style>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){var Percent=(Math.round(e.loaded / e.total * 100));var bar=document.getElementById("myBar");var msgs=document.getElementById("msgs");msgs.innerHTML="Installing Offline Cache ... " + Percent + "%";bar.style.width=Percent + "%";bar.innerHTML=Percent + "%";}
+function DisplayCacheProgress(){var msgs=document.getElementById("msgs");setTimeout(function(){msgs.innerHTML="Cache Installed Successfully, reloading...";},2000);setTimeout(function(){location.reload();},4000);}
+window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+</head>
+<body>
+    <div class="background-text">MINA ADEL</div>
+    
+    <img src="right.png" class="corner-image top-right">
+    <img src="left.png" class="corner-image bottom-left">
+
+    <div class="info-container">
+        <div id="msgs" class="progress-title">Installing Offline Cache ... 0%</div>
+        <div id="myProgress">
+          <div id="myBar">0%</div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+		<span>Developed by:</span>
+		<a href="https://github.com/minaadel551" target="_blank">Mina Adel</a>
+	</div>
+
+</body>
+</html>

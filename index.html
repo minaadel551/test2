@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>MINA ADEL - PS4 9.00 Host</title>
+    <style>
+        body {
+            background-color: #000000;
+            font-family: system-ui;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15vw;
+            font-weight: bold;
+            color: rgba(139, 0, 0, 0.9);
+            z-index: -1;
+            user-select: none;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- Start of new code for images --- */
+        .corner-image {
+            position: fixed; /* Fixed images on screen */
+            width: 250px;    /* You can change image size here */
+            opacity: 0.7;    /* Transparency level */
+            z-index: 0;      /* Image layer order */
+        }
+         
+      .top-right {
+            top: 60px;
+            right: 20px;
+        }
+
+
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+           
+        /* --- End of new code for images --- */
+
+        .main-container {
+            padding-top: 5vh;
+        }
+
+        @font-face {
+            font-family: 'logging';
+            src: url('fonts/LiberationMono-Regular.ttf');
+        }
+        
+        #console {
+            font-family: 'logging', monospace;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid #555;
+            border-radius: 10px;
+            width: 40vw;
+            height: 35vh;
+            max-width: 650px;
+            margin: 40px auto;
+            overflow-y: auto;
+            text-align: left;
+            padding: 25px;
+            font-size: 16px;
+            color: #ffffff;
+            box-shadow: 0px 0px 25px rgba(0, 51, 102, 0.8);
+        }
+
+        .footer-bar {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: #cccccc;
+			padding: 10px 0;
+			font-size: 16px;
+			border-top: 1px solid #222222;
+			box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.footer-bar a {
+			color: #ffffff;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 20px;
+		}
+        
+    </style>
+    <script>
+        if (window.applicationCache.status == '0') {
+            window.location.replace("cache.html");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="background-text">MINA ADEL</div>
+
+    <img src="right.png" class="corner-image top-right">
+    <img src="left.png" class="corner-image bottom-left">
+ 
+    <div class="main-container">
+        <h1><font style='color:#fff;font-size:40px;font-weight:bold;text-shadow:3px 2px #3d3939;'><i>PS4 Auto Jailbreak By MINA ADEL</i></font></h1>
+        <div><font style='color:#fff;font-size:22px;font-weight:bold;text-shadow:3px 2px #3d3939;'><i>PSFree v1.5.1 - Lapse Exploit for Firmware 9.00</i></font></div>
+        <div><font style='color:#fff;font-size:22px;font-weight:bold;text-shadow:3px 2px #3d3939;'><i>GoldHen - With Advanced Memory Management System</i></font></div>
+        <div id="memory-tips" style="color: yellow; margin: 10px; padding: 10px; border: 1px solid #555; border-radius: 5px; background-color: rgba(0,0,0,0.5);">
+            <strong>لتجنب مشكلة "لا توجد مساحة كافية في ذاكرة النظام":</strong><br>
+            1. أعد تشغيل جهاز PS4 قبل تشغيل الجيلبريك<br>
+            2. أغلق جميع التطبيقات والألعاب<br>
+            3. انتظر 30 ثانية بعد فتح المتصفح قبل تشغيل الجيلبريك<br>
+        </div>
+        <pre id='console'></pre>
+        <div id="message" style='color:#fff;font-size:28px;font-weight:bold;text-shadow:3px 2px #3d3939;'>Please wait...</div>
+    </div>
+
+    <div class="footer-bar">
+		<span>Developed by:</span>
+		<a href="https://github.com/minaadel551" target="_blank">Mina Adel</a>
+		<span>|</span>
+		<span>Version 2.2.0</span>
+	</div>
+
+    <script src='./alert.mjs' type='module'></script>
+    <script type="module">
+        import { updateVersionInfo } from './goldhen_info.mjs';
+        import { prepareMemory, monitorMemoryUsage } from './memory_stabilizer.mjs';
+        import { applyAllOptimizations, optimizePS4Browser } from './ps4_memory_helper.mjs';
+        import { stabilizeExploit, setupPeriodicMemoryCleanup } from './exploit_stabilizer.mjs';
+        
+        // Update version info and prepare memory when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update version info first
+            updateVersionInfo();
+            
+            // Set initial message
+            document.getElementById('message').innerHTML = 'Initializing PS4 Jailbreak...';
+            
+            // Prepare memory before starting the exploit
+            setTimeout(() => {
+                prepareMemory();
+                monitorMemoryUsage();
+                
+                // Apply PS4 browser memory optimizations
+                applyAllOptimizations();
+                stabilizeExploit();
+                setupPeriodicMemoryCleanup();
+                
+                // Update message
+                document.getElementById('message').innerHTML = 'Ready to Jailbreak PS4 9.00';
+            }, 300);
+        });
+        
+        // Optimize browser performance periodically
+        setInterval(() => {
+            optimizePS4Browser();
+        }, 60000); // Every minute
+    </script>
+</body>
+</html>
